@@ -1,5 +1,5 @@
 import rootController from './rootController'
 
-export = {
+export {
     rootController
 }
