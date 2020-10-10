@@ -1,5 +1,7 @@
-import rootController from './rootController'
+import rootController from './app/rootController'
+import errorController from './app/errorController'
 
 export {
-    rootController
+    rootController,
+    errorController
 }
