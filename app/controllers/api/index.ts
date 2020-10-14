@@ -1,19 +1,24 @@
 import express from 'express';
 
-const router = express.Router()
-
-const getController = (req,res) =>{
-    /* Logic */
+const getController = (req: expressRequest, res: expressResponce) => {
+/* Logic */
 }
 
-const postController = (req,res) =>{
-    /* Logic */
+const postController = (req: expressRequest, res: expressResponce) => {
+/* Logic */
 }
 
-const deleteController = (req,res) =>{
-    /* Logic */
+const deleteController = (req: expressRequest, res: expressResponce) => {
+/* Logic */
 }
 
-const putController = (req,res) =>{
-    /* Logic */
+const putController = (req: expressRequest, res: expressResponce) => {
+/* Logic */
+}
+
+export {
+    getController,
+    postController,
+    deleteController,
+    putController
 }
