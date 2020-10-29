@@ -9,9 +9,31 @@
   "parserOptions": {
     "ecmaVersion": 12
   },
-  "plugins": ["prettier", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
   "rules": {
+    "semi": 0,
+    "no-console": "off",
+    "comma-dangle": ["error", "never"],
     "prettier/prettier": "error",
-    "no-console": "off"
+    "object-curly-newline": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "operator-linebreak": ["error", "after"]
   }
 }

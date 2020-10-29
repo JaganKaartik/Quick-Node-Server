@@ -1,5 +1,5 @@
 import express from 'express'
-import { rootController } from './controllers/'
+import { rootController } from './controllers'
 
 const app = express()
 const port = process.env.PORT || 5000
