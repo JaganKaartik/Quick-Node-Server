@@ -23,6 +23,7 @@
     "no-console": "off",
     "comma-dangle": ["error", "never"],
     "prettier/prettier": "error",
+    "object-curly-newline": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
