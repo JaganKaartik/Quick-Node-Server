@@ -1,24 +1,21 @@
-import express from 'express';
-
-const getController = (req: expressRequest, res: expressResponce) => {
-/* Logic */
+const getController = (req, res) => {
+  /* Logic */
+  res.send('Controller expects GET Req')
 }
 
-const postController = (req: expressRequest, res: expressResponce) => {
-/* Logic */
+const postController = (req, res) => {
+  /* Logic */
+  res.send('Controller expects POST Req')
 }
 
-const deleteController = (req: expressRequest, res: expressResponce) => {
-/* Logic */
+const deleteController = (req, res) => {
+  /* Logic */
+  res.send('Controller expects DELETE Req')
 }
 
-const putController = (req: expressRequest, res: expressResponce) => {
-/* Logic */
+const putController = (req, res) => {
+  /* Logic */
+  res.send('Controller expects PUT Req')
 }
 
-export {
-    getController,
-    postController,
-    deleteController,
-    putController
-}
+export { getController, postController, deleteController, putController }
