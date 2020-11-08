@@ -17,13 +17,13 @@
       }
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "semi": 0,
-    "no-console": "off",
-    "comma-dangle": ["error", "never"],
+    "no-unused-vars": "off",
     "prettier/prettier": "error",
-    "object-curly-newline": "off",
+    "comma-dangle": "off",
+    "no-console": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -34,6 +34,9 @@
         "tsx": "never"
       }
     ],
-    "operator-linebreak": ["error", "after"]
+    "noImplicitAny": 0,
+    "operator-linebreak": ["error", "after"],
+    "no-underscore-dangle": "off",
+    "object-curly-newline": "off"
   }
 }
