@@ -3,7 +3,6 @@ import { authRouter, apiRouter } from '../routes'
 
 const Middleware = express()
 const bodyParser = require('body-parser')
-const session = require('express-session')
 const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
