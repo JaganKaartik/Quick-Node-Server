@@ -20,17 +20,20 @@ Middleware.use(
 
 Middleware.use(cookieParser())
 
+Middleware.use(passport.initialize())
+Middleware.use(passport.session())
+
 Middleware.use(
   cors({
     orgin: 'http://localhost',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true // Allows session ookie from browser to pass through
+    credentials: true
   })
 )
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
 Middleware.use('/auth', authRouter)
-Middleware.use('/api/v1', authRouter)
+Middleware.use('/api/v1', apiRouter)
 
 export = Middleware
