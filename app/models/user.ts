@@ -3,9 +3,9 @@ import mongoose from 'mongoose'
 const { Schema } = mongoose
 
 const userSchema = new Schema({
+  userId: String,
   name: String,
-  screenName: String,
-  twitterId: String,
+  provider: String,
   profileImageUrl: String
 })
 
