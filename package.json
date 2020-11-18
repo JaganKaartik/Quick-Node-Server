@@ -8,11 +8,13 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node dist/index",
-    "dev": "nodemon dist/index",
+    "start:prod": "NODE_ENV=production APP_ENV=prod node dist/index",
+    "start:test": "NODE_ENV=staging APP_ENV=test nodemon dist/index",
+    "start:dev": "NODE_ENV=development APP_ENV=dev nodemon dist/index",
     "build": "tsc",
-    "lint": "eslint '*/**/*.ts' --fix",
-    "p": "prettier '*/**/*.ts' --color"
+    "lint": "eslint '*/**/*.ts'",
+    "lint:fix": "eslint '*/**/*.ts' --fix",
+    "prettier": "prettier '*/**/*.ts' --write --color"
   },
   "husky": {
     "hooks": {
