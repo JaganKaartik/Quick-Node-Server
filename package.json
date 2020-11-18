@@ -26,7 +26,7 @@
   },
   "lint-staged": {
     "**/*.ts": [
-      "yarn p",
+      "yarn prettier",
       "yarn lint"
     ]
   },
