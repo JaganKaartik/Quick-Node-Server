@@ -1,41 +1,47 @@
 const passport = require('passport')
 
-require('dotenv').config()
+const authGoogle = passport.authenticate('google', {
+  scope: ['email', 'profile']
+})
 
-const CLIENT_HOME_PAGE_URL = process.env.CLIENT_HOME_PAGE_URL || ''
+const authRedirectGoogle = passport.authenticate('google', {
+  successRedirect: '/auth/status',
+  failureRedirect: '/auth/status'
+})
 
-const loginFailed = (res, req) => {
-  res.status(401).json({
-    success: false,
-    message: 'user failed to authenticate.'
-  })
-}
+const authTwitter = passport.authenticate('twitter')
 
-const logout = (res, req) => {
-  delete req.user
-  res.redirect(CLIENT_HOME_PAGE_URL)
-}
+const authRedirectTwitter = passport.authenticate('twitter', {
+  successRedirect: '/auth/status',
+  failureRedirect: '/auth/status'
+})
 
-const loginSuccess = (res, req) => {
+const authStatus = (req, res) => {
   if (req.user) {
-    res.json({
+    res.status(200).send({
       success: true,
-      message: 'user has successfully authenticated',
+      message: 'User has successfully authenticated',
       user: req.user,
       cookies: req.cookies
+    })
+  } else {
+    res.status(401).send({
+      success: false,
+      message: 'user failed to authenticate.'
     })
   }
 }
 
-const authRedirect = () => {
-  passport.authenticate('twitter', {
-    successRedirect: CLIENT_HOME_PAGE_URL,
-    failureRedirect: '/auth/login/failed'
-  })
+const logout = (req, res) => {
+  req.logout()
+  res.redirect('/auth/status')
 }
 
-const auth = () => {
-  passport.authenticate('twitter')
+export {
+  authGoogle,
+  authRedirectGoogle,
+  authTwitter,
+  authRedirectTwitter,
+  authStatus,
+  logout
 }
-
-export { loginSuccess, loginFailed, auth, authRedirect, logout }

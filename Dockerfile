@@ -1,13 +1,15 @@
-FROM node:latest
+FROM node:alpine
 
 WORKDIR /app
 
 COPY package.json yarn.lock
 
-RUN yarn install
+RUN yarn install --pure-lockfile
 
 COPY . . 
 
-EXPOSE 5000
+RUN yarn build
+
+EXPOSE 8000
 
 CMD ["yarn","start"]
