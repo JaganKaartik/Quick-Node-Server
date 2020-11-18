@@ -3,7 +3,10 @@ const passport = require('passport')
 const TwitterStrategy = require('passport-twitter')
 const User = require('../models/user')
 
-require('dotenv').config()
+const {
+  TWITTER_CONSUMER_KEY,
+  TWITTER_CONSUMER_SECRET
+} = require('./default.config')
 
 passport.serializeUser((user, done) => {
   done(null, user.id)
@@ -22,8 +25,8 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new TwitterStrategy(
     {
-      consumerKey: process.env.TWITTER_CONSUMER_KEY,
-      consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+      consumerKey: TWITTER_CONSUMER_KEY,
+      consumerSecret: TWITTER_CONSUMER_SECRET,
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {

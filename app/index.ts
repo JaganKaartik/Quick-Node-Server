@@ -1,8 +1,11 @@
 import express from 'express'
 import { connectDB } from './config/database'
 
+const { PORT } = require('./config/default.config')
+
 const app = express()
-const port = process.env.PORT || 5000
+
+const port = PORT || 8000
 
 connectDB()
 
