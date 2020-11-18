@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node dist/index",
     "dev": "nodemon dist/index",
-    "build": "tsc -p .",
+    "build": "tsc",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color"
   },
