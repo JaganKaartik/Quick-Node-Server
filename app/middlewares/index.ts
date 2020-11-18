@@ -9,6 +9,8 @@ const passport = require('passport')
 const cors = require('cors')
 const passportSetup = require('../config/passport-setup')
 
+const { CLIENT_ORIGIN } = require('../config/default.config')
+
 Middleware.use(
   cookieSession({
     name: 'session',
@@ -24,7 +26,7 @@ Middleware.use(passport.session())
 
 Middleware.use(
   cors({
-    orgin: 'http://localhost',
+    orgin: CLIENT_ORIGIN,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
   })
