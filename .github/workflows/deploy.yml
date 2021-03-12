@@ -1,0 +1,22 @@
+name: Deployment to Docker Hub
+
+on:
+  push:
+    branches: [production]
+  pull_request:
+    branches: [production]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and Push Docker Image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: ${{ secrets.DOCKER_USER }}/docker-node-demo-ts
+          tag: latest
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
