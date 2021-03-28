@@ -1,6 +1,6 @@
-# Node Server Boilerplate
+# Quick-Node
 
-A template for creating a containerised Express.js server using Typescript.
+A base project to quickly spin up a Node server.
 
 File Structure  
 ```
