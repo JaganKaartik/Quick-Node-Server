@@ -1,4 +1,4 @@
-import { ConnectionOptions, connect, connection } from 'mongoose'
+import { ConnectionOptions, connect } from 'mongoose'
 
 const { MONGO_URL } = require('./default.config')
 
@@ -11,13 +11,11 @@ const connectDB = async () => {
       useUnifiedTopology: true
     }
     await connect(MONGO_URL, options)
-    console.log('MongoDB Connected...')
+    console.log('MongoDB Successfully Connected...')
   } catch (err) {
     console.error(err.message)
     process.exit(1)
   }
 }
 
-const db = connection
-
-export { db, connectDB }
+export = connectDB

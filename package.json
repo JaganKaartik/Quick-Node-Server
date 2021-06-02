@@ -1,23 +1,19 @@
 {
-  "name": "typescript-express-docker-boilerplate",
-  "version": "1.0.0",
-  "description": "A typescript boilerplate for dockerized express app",
+  "name": "quick-node",
+  "version": "2.0.0",
+  "description": "A template for creating a Express RESTful API server.",
   "main": "index.js",
-  "repository": "https://github.com/MyCloudle/Typescript-Express-Docker-Boilerplate",
+  "repository": "https://github.com/MyCloudle/Quick-Node",
   "author": "JaganKaartik <kaartikjagan@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start:prod": "NODE_ENV=production APP_ENV=prod node dist/index",
-    "start:test": "NODE_ENV=staging APP_ENV=test nodemon dist/index",
-    "start:dev": "NODE_ENV=development APP_ENV=dev nodemon dist/index",
+    "start": "node dist/index",
+    "dev": "nodemon dist/index",
     "build": "tsc",
     "lint": "eslint '*/**/*.ts'",
     "lint:fix": "eslint '*/**/*.ts' --fix",
-    "prettier": "prettier '*/**/*.ts' --write --color",
-    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
-    "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up",
-    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up"
+    "prettier": "prettier '*/**/*.ts' --write --color"
   },
   "husky": {
     "hooks": {
@@ -48,20 +44,14 @@
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "connect-redis": "^5.1.0",
-    "cookie-parser": "^1.4.5",
-    "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-session": "^1.17.1",
     "husky": "^4.3.0",
+    "jsonwebtoken": "^8.5.1",
     "lint-staged": "^10.5.1",
     "mongoose": "^5.10.11",
     "passport": "^0.4.1",
-    "passport-google-oauth2": "^0.2.0",
-    "passport-twitter": "^1.0.4",
-    "redis": "^3.0.2"
+    "passport-google-oauth2": "^0.2.0"
   }
 }
