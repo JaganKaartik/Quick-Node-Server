@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "NODE_ENV=production node dist/index",
-    "dev": "NODE_ENV=development nodemon dist/index",
+    "start": "node dist/index",
+    "dev": "nodemon dist/index",
     "build": "tsc",
     "lint": "eslint '*/**/*.ts'",
     "lint:fix": "eslint '*/**/*.ts' --fix",

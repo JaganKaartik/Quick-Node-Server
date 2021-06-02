@@ -4,9 +4,12 @@ const { Schema } = mongoose
 
 const userSchema = new Schema({
   userId: String,
-  name: String,
   provider: String,
-  profileImageUrl: String
+  name: String,
+  profileImageUrl: String,
+  otherInfo: String,
+  location: String,
+  profileBannerUrl: String
 })
 
 export = mongoose.model('user', userSchema)
