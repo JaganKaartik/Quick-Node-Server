@@ -12,14 +12,13 @@ File Structure
 │   ├── config
 │   │   ├── database.ts
 │   │   ├── default.config.ts
-│   │   ├── passport-setup.ts
-│   │   └── redis.ts
+│   │   └── passport-setup.ts
 │   ├── controllers
 │   │   ├── api.ts
 │   │   └── auth.ts
 │   ├── index.ts
 │   ├── middlewares
-│   │   ├── authCheck.ts
+│   │   ├── checkToken.ts
 │   │   └── index.ts
 │   ├── models
 │   │   └── user.ts
@@ -27,10 +26,6 @@ File Structure
 │       ├── api.ts
 │       ├── auth.ts
 │       └── index.ts
-├── docker-compose.dev.yml
-├── docker-compose.prod.yml
-├── docker-compose.test.yml
-├── docker-compose.yml
 ├── package.json
 ├── tsconfig.json
 └── yarn.lock
