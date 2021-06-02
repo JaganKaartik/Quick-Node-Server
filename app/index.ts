@@ -1,5 +1,5 @@
 import express from 'express'
-import { connectDB } from './config/database'
+import connectDB from './config/database'
 
 const { PORT } = require('./config/default.config')
 
